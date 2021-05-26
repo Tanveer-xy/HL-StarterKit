@@ -1,5 +1,5 @@
 FROM ravinayag/webtty:latest
-MAINTAINER ravinayag@gmail.com
+MAINTAINER 17114156-080.com
 
 RUN apk add -U --no-cache openssh-client sshpass python3 bash ansible git
 RUN echo "trap ' '2 20" >> /etc/profile
@@ -8,15 +8,12 @@ RUN echo "trap 'exit' INT" >> /etc/profile
 RUN echo "export IGNOREEOF=40" >> /etc/profile
 
 WORKDIR /usr/src
-
 RUN git clone --depth 1 https://github.com/ravinayag/HL-StartertKit.git && \
     mv HL-StartertKit /usr/src/app/HLF
-
 RUN echo 'cd /usr/src/app/HLF' >> /etc/profile.d/myscript.sh
 RUN echo './hl-start.sh' >> /etc/profile.d/myscript.sh
 RUN echo 'cd /' >> /etc/profile.d/myscript.sh
 RUN echo 'exit' >> /etc/profile.d/myscript.sh
-
 RUN chmod 755 /etc/profile.d/myscript.sh
 RUN chmod 775 -R /usr/src/app/HLF
 # Set-up term user

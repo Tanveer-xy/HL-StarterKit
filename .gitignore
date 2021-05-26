@@ -19,10 +19,6 @@
 #org1
 #org2
 *tar.gz
-#swarm.env
-#swarm1.env
-#color.env
-#test.env
 configtx.yaml.14
 #crypto-config.org.yaml
 t.sh
